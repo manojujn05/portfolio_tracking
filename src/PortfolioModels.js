@@ -3,9 +3,7 @@ const Schema = mongoose.Schema;
 
 // Schema for User collection
 const userSchema = new Schema({
-  email: { type: String, required: true, unique: true }, // Add email field
   name: { type: String, required: true },
-  password: { type: String, required: true }
 });
 
 

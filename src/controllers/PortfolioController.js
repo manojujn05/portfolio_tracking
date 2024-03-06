@@ -154,7 +154,7 @@ exports.calculateCumulativeReturns = async (req, res) => {
         stockReturns.netQuantity -= quantity;
         if (stockReturns.netQuantity < 0) {
           console.error('Invalid trade: Selling more quantity than bought');
-          return; // Skip processing this trade
+          return; 
         }
         stockReturns.totalSellPrice += quantity * price;
       }
@@ -168,7 +168,6 @@ exports.calculateCumulativeReturns = async (req, res) => {
       cumulativeReturns[key] = stockReturns;
     });
 
-    // Convert cumulativeReturns object to array
     const cumulativeReturnsArray = Object.values(cumulativeReturns);
     res.json({ success: true, data: cumulativeReturnsArray });
 
